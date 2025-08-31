@@ -23,7 +23,7 @@ const userRouter = require("./routes/user.js");
 
 const dbUrl = process.env.ATLASDBS_URL;
 // const dbUrl = process.env.DB_URL || "mongodb://localhost:27017/airbnb";
-
+let port = process.env.PORT || 8080;
 
 main()
   .then(() => {
@@ -102,6 +102,6 @@ app.use((err, req, res, next) => {
   res.status(status).render("./error.ejs", { message, status });
 });
 
-app.listen(8080, (req, res) => {
+app.listen(port, (req, res) => {
   console.log("Your port is ready 8080");
 });
